@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-// compute
-Route::resource('compute', 'ComputeController', [
-    'except' => ['show', 'edit']
+Route::get('compute', 'ComputeController@index', [
+//    'except' => ['show', 'edit','update']
 ]);
+
+Route::post('compute', 'ComputeController@store');

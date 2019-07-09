@@ -3,7 +3,12 @@
 
 namespace App\Http\Requests;
 
-class ComputeRequest extends Request {
+use Illuminate\Foundation\Http\FormRequest;
+
+class ComputeRequest extends FormRequest {
+
+
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -12,9 +17,9 @@ class ComputeRequest extends Request {
     public function rules()
     {
         return [
-            'value' => 'required|max:65000',
-            'emojis' => 'required|email',
-            'value2' => 'required|max:65000'
+            'value' => 'required|integer|max:65000',
+            'emojis' => 'required',
+            'value2' => 'required|integer|max:65000'
         ];
     }
 }
